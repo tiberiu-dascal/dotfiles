@@ -27,7 +27,7 @@ alias ghcs="gh copilot suggest"
 alias pfzf="fzf --preview-window=wrap --preview 'bat --color=always --style=numbers --line-range :500 {}'"
 alias aliases='alias | fzf --prompt="Alias >> " --height=~65% --layout=reverse --border --exit-0'
 alias rec_start='ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "Capture screen 0" $HOME/Movies/RECORDINGS/RAW_FOOTAGE/MAC_REC_$(date "+%Y%m%d_%H_%M_%S")_RAW.mkv &>/dev/null'
-alias repoup='find $HOME/REPOS -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
+alias repoup='find $HOME/REPOS/ -maxdepth 1 -type d | tail -n+2>/dev/null > $HOME/.tmp/gitfiles'
 alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
 
