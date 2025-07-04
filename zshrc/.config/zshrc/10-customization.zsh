@@ -9,4 +9,5 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+eval "$(uv generate-shell-completion zsh)"
 eval "$(starship init zsh)"
