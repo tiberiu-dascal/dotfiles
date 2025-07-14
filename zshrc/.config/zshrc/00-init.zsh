@@ -35,8 +35,12 @@ FZF_DEFAULT_OPTS="\
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Export TMUX_AUTOSTART=1 on WSL at work (ROTDASCAL01) and on Mac (TBMBPM3.local)
-if [ "$(hostname)" = "TBMBPM3.local" ]; then
+# Also use the dedicated file for Windows WSL setup for local SMAX dev instance
+if [ "$(hostname)" = "TBMBPM3.local" ] || [ "$(hostname)" = "ROTDASCAL01" ]; then
     export TMUX_AUTOSTART=1
+    if [ -f $HOME/.config/zshrc/30-win-wsl.zsh ]; then
+        source $HOME/.config/zshrc/30-win-wsl.zsh
+    fi
 fi
 
 # Start tmux if TMUX_AUTOSTART is set
