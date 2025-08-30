@@ -1,10 +1,10 @@
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="Catppuccin-mocha"
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export REPOS_DIR=$HOME/REPOS
 export VISUAL=nvim
 export ZSH="$HOME/.oh-my-zsh"
-
+export JAVA_HOME="/usr/local/Cellar/openjdk@17/17.0.8"
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/go/bin
