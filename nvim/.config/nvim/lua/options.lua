@@ -63,6 +63,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
+
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
@@ -83,5 +84,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.opt.guicursor = {
+  'n-v-c:block-Cursor',
+  'i-ci:block-Cursor/lCursor-blinkwait1000-blinkon500-blinkoff500',
+  'r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100'
+}
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
