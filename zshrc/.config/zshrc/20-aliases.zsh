@@ -47,7 +47,7 @@ alias art='php artisan'
 
 # List all nvims flavors and load the selected one
 function nvims() {
-	local vims=("default" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim")
+	local vims=("default" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim" "PyNvim")
 
 	config=$(printf "%s\n" "${vims[@]}" | fzf --prompt="Load  Config for >> " --height=20% --layout=reverse --border --exit-0)
 
