@@ -666,7 +666,7 @@ require('lazy').setup({
             light = "latte",
             dark = "macchiato",
         },
-        transparent_background = true, -- disables setting the background color.
+        transparent_background = false, -- disables setting the background color.
         show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
         term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
         dim_inactive = {
@@ -953,6 +953,23 @@ require('lazy').setup({
       })
     end,
   },
+  {
+    "github/copilot.vim",
+    cmd = "Copilot",
+    event = "User AstroFile",
+    specs = {
+      {
+        "catppuccin",
+        optional = true,
+        ---@module 'catppuccin'
+        ---@type CatppuccinOptions
+        opts = { integrations = { copilot_vim = true } },
+      },
+    },
+  },
+  -- {
+  --   require 'github/copilot.vim'
+  -- },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
