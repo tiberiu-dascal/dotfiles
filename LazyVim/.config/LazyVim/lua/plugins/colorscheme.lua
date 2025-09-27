@@ -1,7 +1,12 @@
 local colorscheme = require("lazyvim.plugins.colorscheme")
 return {
   -- add catppuccin
-  { "catppuccin/nvim", name = "catppuccin" },
+  {
+    "catppuccin",
+    opts = {
+      transparent_background = false,
+    },
+  },
 
   -- Configure LazyVim to load catppuccin
   {
