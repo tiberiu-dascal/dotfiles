@@ -9,6 +9,11 @@ export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/go/bin
 
+# if emacs is installed, add emacs's bin folder to the path
+if command -v emacs &>/dev/null; then
+  export PATH=$PATH:$HOME/.config/emacs/bin/
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
