@@ -1,0 +1,115 @@
+# Use zsh as default-shell
+set -g default-shell /bin/zsh
+
+# Enable 256-color and true-color (24 bit)
+set -g default-terminal "screen-256color"
+set -ga terminal-overrides ",xterm*:Tc"
+
+# General settings
+set -g set-clipboard on        # Use system clipboard
+set -g detach-on-destroy off   # Don't exit tmux when closing a session
+set -g escape-time 0           # Remove delay for exiting insert mode
+set -g history-limit 1000000   # Increase history size (default 2000)
+set -g mouse on                # Ebable mouse support
+set -g status-interval 3       # Update status bar every 3 seconds
+set -g allow-passthrough on    # Allow programs in the pane to bypass tmux (spf image preview)
+set -g status-position top
+
+# Bindings 
+# bind r to reload config file
+unbind r
+bind r source-file ~/.config/tmux/tmux.conf
+
+# Bind C-Space to prefix
+unbind C-b                     # remove default binding for prefix
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Split window vertically
+unbind %
+bind \\ split-window -h -c "#{pane_current_path}"
+
+# Split window horizontally
+unbind \"
+bind - split-window -v -c "#{pane_current_path}"
+
+# New window in the same path
+bind c new-window -c "#{pane_current_path}"
+
+# Synchronize all panes
+bind-key S set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
+
+# Use vim keys to resize
+bind -r j resize-pane -D 5
+bind -r k resize-pane -U 5
+bind -r l resize-pane -R 5
+bind -r h resize-pane -L 5
+
+# Use m to maximize pane
+bind -r m resize-pane -Z
+
+# Vim style pane selection
+set-window-option -g mode-key vi  # prefix + [ - copy mode
+# bind-key h select-pane -L
+# bind-key j select-pane -D 
+# bind-key k select-pane -U
+# bind-key l select-pane -R
+
+# Start selecting text with 'v'
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+
+# Copy text with 'y'
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+# Paste yanked text with Prefix + P 
+bind P paste-buffer
+
+# Don't exit copy mode when dragging with mouse
+unbind -T copy-mode-vi MouseDragEnd1Pane
+
+bind C-f display-popup \
+  -d "${pane_current_path}" \
+  -w 90% -h 90% \
+  -E "spf"
+
+bind C-l display-popup \
+  -d "${pane_current_path}" \
+  -w 90% -h 90% \
+  -E "lazygit"
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set -g renumber-windows on
+
+# Load plugins
+set -g @plugin 'christoomey/vim-tmux-navigator'  # Enable navigating between nvim and tmux
+set -g @plugin 'tmux-plugins/tmux-resurrect'     # Persist tmux sessions
+set -g @plugin 'tmux-plugins/tmux-continuum'     # Automatically saves sessions
+set -g @plugin 'hendrikmi/tmux-cpu-mem-monitor'  # CPU/MEM monitor by send-keys
+
+# style
+gray_light="#acb0be"
+gray_medium="#7c7f93"
+gray_dark="#4c4f69"
+green_soft="#7287fd"
+blue_muted="#89b4fa"
+cyan_soft="#04a5e5"
+
+set -g status-left-length 100
+set -g status-style "fg=${gray_light},bg=default"
+set -g status-left "#[fg=${green_soft},bold]  #S #[fg=${light_gray}nobold] | "
+set -g status-right "#[fg=${cyan_soft}]󰻠 #{cpu}  #{mem} "
+set -g window-status-current-format "#[fg=${cyan_soft},bold]  #[underscore]#I:#W#{?window_zoomed_flag,(),}"
+set -g window-status-format "#[fg=${gray_light},bold] #I:#W"
+set -g message-style "fg=${gray_light},bg=default"
+set -g mode-style "fg=${gray_dark},bg=${blue_muted}"
+set -g pane-border-style "fg=${gray_dark}"
+set -g pane-active-border-style "fg=${gray_medium}"
+
+# Resurrect
+set -g @resurrect-capture-pane-contents 'on'
+
+# Initialize TMUX plugin manager (this line ALWASY needs to be last)
+run '~/.config/tmux/plugins/tpm/tpm'
+

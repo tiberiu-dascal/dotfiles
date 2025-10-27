@@ -4,7 +4,9 @@ export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export REPOS_DIR=$HOME/REPOS
 export VISUAL=nvim
 export ZSH="$HOME/.oh-my-zsh"
-export JAVA_HOME="/usr/local/Cellar/openjdk@17/17.0.8"
+if [ "$(hostname)" = "TBMBPM3.local" ]; then
+  export JAVA_HOME="/usr/local/Cellar/openjdk@17/17.0.8"
+fi
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/go/bin
@@ -19,6 +21,10 @@ if uname -s | grep -q "Darwin" ;then
     if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 fi
 
+. "$HOME/.cargo/env"
+. "/home/tdascal/.local/share/bob/env/env.sh"
+eval "$(mise activate bash)"
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#f4b8e4,bold,underline'
@@ -32,7 +38,7 @@ FZF_DEFAULT_OPTS="\
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Export TMUX_AUTOSTART=1 on WSL at work (ROTDASCAL01) and on Mac (TBMBPM3.local)
-if [ "$(hostname)" = "ROTDASCAL01" ] || [ "$(hostname)" = "TBMBPM3.local" ]; then
+if [ "$(hostname)" = "OTX-HBKT2D3" ] || [ "$(hostname)" = "TBMBPM3.local" ]; then
     export TMUX_AUTOSTART=1
 fi
 
