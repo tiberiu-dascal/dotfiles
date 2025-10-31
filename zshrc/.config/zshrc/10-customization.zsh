@@ -1,5 +1,5 @@
 if [[ hostname == "OTX-HBKT2D3" ]]; then
-    plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting omw )
+    plugins=( git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting omw )
 else
     plugins=( git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting )
 fi
