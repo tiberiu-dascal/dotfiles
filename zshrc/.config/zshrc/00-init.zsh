@@ -26,9 +26,11 @@ if uname -s | grep -q "Darwin" ;then
     if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 fi
 
-. "$HOME/.cargo/env"
-. "/home/tdascal/.local/share/bob/env/env.sh"
-eval "$(mise activate bash)"
+if [ "$(hostname)" = "OTX-HBKT2D3" ]; then
+  . "$HOME/.cargo/env"
+  . "$HOME/.local/share/bob/env/env.sh"
+  eval "$(mise activate bash)"
+fi
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 
