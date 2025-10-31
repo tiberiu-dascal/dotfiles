@@ -3,6 +3,8 @@ if uname -n | grep -q "ROTDASCAL01"; then
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
+[ -f $HOME/.zshenv ] && source $HOME/.zshenv
+
 for f in $HOME/.config/zshrc/* ;do
     if [[ $f != "99-work.zsh" ]]; then
         source $f
