@@ -10,6 +10,7 @@ fi
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.config/emacs/bin/
 
 # if emacs is installed, add emacs's bin folder to the path
 if command -v emacs &>/dev/null; then
