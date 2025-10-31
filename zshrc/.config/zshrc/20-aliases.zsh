@@ -24,7 +24,18 @@ alias aliases='alias | fzf --height 40% --layout reverse --border'
 alias cls='clear'
 alias clera='clear'
 alias ghcs="gh copilot suggest"
-alias pfzf="fzf --preview-window=wrap --preview 'bat --color=always --style=numbers --line-range :500 {}'"
+alias pfzf="fzf \
+  --style full \
+  --preview 'bat --color=always --style=numbers --line-range :500 {}' \
+  --bind 'focus:transform-preview-label:[[ -n  {}  ]] && printf \"Previewing [%s] \" {}' \
+  --border --padding 1,2 \
+  --border-label ' Search with preview ' \
+  --input-label ' Search for ... ' \
+  --color 'border:#aaaaaa,label:#cccccc' \
+  --color 'preview-border:#9999cc,preview-label:#ccccff' \
+  --color 'list-border:#669966,list-label:#99cc99' \
+  --color 'input-border:#996666,input-label:#ffcccc' \
+  --color 'header-border:#6699cc,header-label:#99ccff'"
 alias aliases='alias | fzf --prompt="Alias >> " --height=~65% --layout=reverse --border --exit-0'
 alias rec_start='ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "Capture screen 0" $HOME/Movies/RECORDINGS/RAW_FOOTAGE/MAC_REC_$(date "+%Y%m%d_%H_%M_%S")_RAW.mkv &>/dev/null'
 alias repoup='find $HOME/REPOS -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
