@@ -1,6 +1,6 @@
 # General settings
 theme = Catppuccin Mocha
-font-size = 16
+font-size = 14
 mouse-hide-while-typing = true
 background-opacity = 0.9
 background-blur-radius = 20
