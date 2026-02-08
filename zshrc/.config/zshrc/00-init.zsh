@@ -46,14 +46,14 @@ FZF_DEFAULT_OPTS="\
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Export TMUX_AUTOSTART=1 on WSL at work (ROTDASCAL01) and on Mac (TBMBPM3.local)
-if [ "$(hostname)" = "OTX-HBKT2D3" ] || [ "$(hostname)" = "TBMBPM3.local" ]; then
+if [ "$(hostname)" = "OTX-HBKT2D3" ] || [ "$(hostname)" = "tb-thinkX1" ]; then
     export TMUX_AUTOSTART=1
 fi
 
 # Start tmux if TMUX_AUTOSTART is set
 if [[ -v TMUX_AUTOSTART ]]; then
   if [ ! "$TMUX" ]; then
-    tmux attach -t "🚀" || tmux new -s "🚀"
+    tmux attach -t "👨🏻‍💻" || tmux new -s "👨🏻‍💻"
   fi
 fi
 

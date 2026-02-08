@@ -7,7 +7,9 @@ background-blur-radius = 20
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
-# MacOS settings
+window-decoration = false
+# gtk-titlebar = false
+# # MacOS settings
 macos-option-as-alt = true
 macos-titlebar-style = hidden
 
