@@ -1,4 +1,5 @@
 export BAT_THEME="Catppuccin-mocha"
+export ENCODED_GITHUB_TOKEN=Z2hwX3o3V0xGU3RsR2dxOXhlMUI5Uld1MFo5VHJaOTJycjBrUzJrRgo=
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export REPOS_DIR=$HOME/REPOS
@@ -46,7 +47,7 @@ FZF_DEFAULT_OPTS="\
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 # Export TMUX_AUTOSTART=1 on WSL at work (ROTDASCAL01) and on Mac (TBMBPM3.local)
-if [ "$(hostname)" = "OTX-HBKT2D3" ] || [ "$(hostname)" = "tb-thinkX1" ]; then
+if [ "$(hostname)" = "OTX-HBKT2D3" ] || [ "$(hostname)" = "tbx12in1" ]; then
     export TMUX_AUTOSTART=1
 fi
 
