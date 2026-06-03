@@ -1,7 +1,7 @@
 # If on WSL on work laptop, load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f $HOME/.zshenv ] && source $HOME/.zshenv
+#[ -f $HOME/.zshenv ] && source $HOME/.zshenv
 
 for f in $HOME/.config/zshrc/* ;do
     if [[ $f != "99-work.zsh" ]]; then
@@ -24,3 +24,10 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# bun completions
+[ -s "/home/tdascal/.bun/_bun" ] && source "/home/tdascal/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
