@@ -79,7 +79,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --color=always 
 # Aliases
 alias ls='eza --icons'
 alias k='kubectl'
-alias ll='ls -a'
+alias ll='ls -la'
 alias cat=bat
 
 eval "$(fzf --zsh)"
