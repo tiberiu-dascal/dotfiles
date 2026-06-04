@@ -43,6 +43,9 @@ alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
 alias emacs="emacsclient -c -a 'emacs ' -nw"
 
+# Kubectl Aliases
+alias k=kubectl
+
 # youtube-dl aliases
 alias yta-aac='youtube-dl --extract-audio --audio-format aac '
 alias yta-best='youtube-dl --extract-audio --audio-format best '

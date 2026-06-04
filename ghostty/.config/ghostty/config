@@ -3,15 +3,15 @@ theme = Catppuccin Mocha
 font-size = 14
 mouse-hide-while-typing = true
 background-opacity = 0.9
-background-blur-radius = 20
+background-blur-radius = 1
+window-width = 110
+window-height = 30
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 window-decoration = false
 # gtk-titlebar = false
 # # MacOS settings
-macos-option-as-alt = true
-macos-titlebar-style = hidden
 
 
 # custom-shader = shaders/bloom.glsl
