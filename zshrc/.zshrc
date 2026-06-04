@@ -19,9 +19,8 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice depth=1
+zinit ice depth=1;zinit light romkatv/powerlevel10k
 
-zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -53,9 +52,6 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-bindkey -e
-bindkey '^n' history-search-forward
-bindkey '^p' history-search-backward
 
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
@@ -82,7 +78,18 @@ alias k='kubectl'
 alias ll='ls -la'
 alias cat=bat
 
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
+
+bindkey -e
+
+# zsh-vi-mode resets all keymaps during its own (deferred) init, which runs
+# AFTER .zshrc. Binding keys here directly would be wiped, so register them in
+# its zvm_after_init hook instead.
+zvm_after_init_commands+=(
+  'bindkey "^r" fzf-history-widget'
+  'bindkey "^n" history-search-forward'
+  'bindkey "^p" history-search-backward'
+)
 
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_OPTS=" \
