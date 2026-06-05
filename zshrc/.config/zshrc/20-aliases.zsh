@@ -1,9 +1,3 @@
-# WSL specific aliases
-if uname -n | grep -q "ROTDASCAL01" ;then
-  alias k='kubectl.exe'
-  alias minikube='minikube.exe'
-fi
-
 # Navigation aliases (ls/exa/eza)
 alias ls='eza --icons -g'
 alias lsa='ls -a'
@@ -38,13 +32,10 @@ alias pfzf="fzf \
   --color 'header-border:#6699cc,header-label:#99ccff'"
 alias aliases='alias | fzf --prompt="Alias >> " --height=~65% --layout=reverse --border --exit-0'
 alias rec_start='ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "Capture screen 0" $HOME/Movies/RECORDINGS/RAW_FOOTAGE/MAC_REC_$(date "+%Y%m%d_%H_%M_%S")_RAW.mkv &>/dev/null'
-alias repoup='find $HOME/REPOS -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
+alias repoup='find $HOME/REPOS/ -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
 alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
 alias emacs="emacsclient -c -a 'emacs ' -nw"
-
-# Kubectl Aliases
-alias k=kubectl
 
 # youtube-dl aliases
 alias yta-aac='youtube-dl --extract-audio --audio-format aac '
@@ -91,8 +82,3 @@ function repos() {
 
 }
 bindkey -s ^a "repos\n"
-
-# fd() {
-#   preview="git diff $@ --color=always -- {-1}"
-#   git diff $@ --name-only | fzf -m --ansi --preview $preview
-# }

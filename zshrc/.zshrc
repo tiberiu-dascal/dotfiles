@@ -26,7 +26,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light zsh-contrib/zsh-fzf
-zinit light jeffreytse/zsh-vi-mode
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -80,14 +79,9 @@ alias cat=bat
 
 bindkey -e
 
-# zsh-vi-mode resets all keymaps during its own (deferred) init, which runs
-# AFTER .zshrc. Binding keys here directly would be wiped, so register them in
-# its zvm_after_init hook instead.
-zvm_after_init_commands+=(
-  'bindkey "^r" fzf-history-widget'
-  'bindkey "^n" history-search-forward'
-  'bindkey "^p" history-search-backward'
-)
+# bindkey "^r" fzf-history-widget
+bindkey "^n" history-search-forward
+bindkey "^p" history-search-backward
 
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_OPTS=" \

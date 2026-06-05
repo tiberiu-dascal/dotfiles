@@ -10,7 +10,10 @@ if [[ $(hostname) == "OTX-HBKT2D3" ]]; then
     source "$HOME/.local/share/bob/env/env.sh"
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-    eval "$(mise activate bash)"
+    eval "$(mise activate zsh)"
+
+    alias k='kubectl.exe'
+    alias minikube='minikube.exe'
 
     enable_jdk17(){
         echo "Enable jdk 17 using sdkman. Please double confirm you itsma-x is in correct branch"
