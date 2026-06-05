@@ -78,8 +78,6 @@ alias k='kubectl'
 alias ll='ls -la'
 alias cat=bat
 
-source <(fzf --zsh)
-
 bindkey -e
 
 # zsh-vi-mode resets all keymaps during its own (deferred) init, which runs
@@ -119,6 +117,10 @@ for f in $HOME/.config/zshrc/*;do
     fi
 done
 
+# fzf shell integration — must come after the config loop so that mise has
+# already activated and put the fzf binary on PATH.
+source <(fzf --zsh)
+
 # Check if sdkman (Java Version manager) is installed and initialize it
 if command -v sdk &>/dev/null; then
     export SDKMAN_DIR="$HOME/.sdkman"
@@ -142,3 +144,4 @@ fi
 # silences zoxide's "configuration issue" warning.
 eval "$(zoxide init --cmd cd zsh)"
 
+export PATH="$HOME/.local/bin:$PATH"

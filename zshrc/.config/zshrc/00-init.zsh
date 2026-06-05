@@ -4,10 +4,6 @@ export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export REPOS_DIR=$HOME/REPOS
 export VISUAL=nvim
-export ZSH="$HOME/.oh-my-zsh"
-if [ "$(hostname)" = "TBMBPM3.local" ]; then
-  export JAVA_HOME="/usr/local/Cellar/openjdk@17/17.0.8"
-fi
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/go/bin
@@ -46,5 +42,5 @@ FZF_DEFAULT_OPTS="\
   --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
-
+eval "$(mise activate zsh)"
 
