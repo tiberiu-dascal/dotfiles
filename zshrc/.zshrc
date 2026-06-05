@@ -112,9 +112,7 @@ _cache_init() {
 _cache_init kubectl kubectl kubectl completion zsh
 
 for f in $HOME/.config/zshrc/*;do
-    if [[ ${f:t} != "99-work.zsh" ]]; then
-        source $f
-    fi
+	source $f
 done
 
 # fzf shell integration — must come after the config loop so that mise has

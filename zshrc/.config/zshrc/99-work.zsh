@@ -1,12 +1,15 @@
-if [[ hostname == "OTX-HBKT2D3" ]]; then
+if [[ $(hostname) == "OTX-HBKT2D3" ]]; then
     PATH=$PATH:$HOME/.local/bin
     PATH=$PATH:/usr/local/go/bin
     M2_HOME=/usr/local/apache-maven/apache-maven-3.8.8
     M2=$M2_HOME/bin
     PATH=$M2:$PATH
+    export BAT_THEME="Catppuccin-mocha"
 
-    . "$HOME/.cargo/env"
-    . "$HOME/.local/share/bob/env/env.sh"
+    source "$HOME/.cargo/env"
+    source "$HOME/.local/share/bob/env/env.sh"
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+
     eval "$(mise activate bash)"
 
     enable_jdk17(){
