@@ -1,10 +1,8 @@
 # Navigation aliases (ls/exa/eza)
-alias ls='eza --icons -g'
-alias lsa='ls -a'
+alias ls='eza --icons --git --git-repos --mounts --classify'
+alias la='ls -a'
 alias ll='ls -l'
-alias la='ll -a'
-alias lT='ls -T'
-alias lH='ls -ltr'
+alias lla='ll -a'
 
 # NVIM ALIASES #
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"

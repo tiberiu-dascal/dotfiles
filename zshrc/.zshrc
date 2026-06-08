@@ -71,12 +71,6 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -T -L 1 $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --color=always -T -L 1 $realpath'
 
-# Aliases
-alias ls='eza --icons'
-alias k='kubectl'
-alias ll='ls -la'
-alias cat=bat
-
 bindkey -e
 
 # bindkey "^r" fzf-history-widget

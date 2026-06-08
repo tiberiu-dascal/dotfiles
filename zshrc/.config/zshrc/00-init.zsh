@@ -1,4 +1,3 @@
-export BAT_THEME="Catppuccin-mocha"
 export ENCODED_GITHUB_TOKEN=Z2hwX3o3V0xGU3RsR2dxOXhlMUI5Uld1MFo5VHJaOTJycjBrUzJrRgo=
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
@@ -43,4 +42,10 @@ FZF_DEFAULT_OPTS="\
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 #eval "$(mise activate zsh)"
-
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
