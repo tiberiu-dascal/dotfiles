@@ -34,6 +34,8 @@ alias repoup='find $HOME/REPOS/ -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/git
 alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
 alias emacs="emacsclient -c -a 'emacs ' -nw"
+alias cat=bat
+alias k=kubectl
 
 # youtube-dl aliases
 alias yta-aac='youtube-dl --extract-audio --audio-format aac '
