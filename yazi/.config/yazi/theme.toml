@@ -1,13 +1,23 @@
 [flavor]
 dark = "catppuccin-mocha"
-
-[status]
-sep_left  = { open = " ", close = " " }
-sep_right = { open = " ", close = " " }
+light = "catppuccin-mocha"
 
 [tabs]
 sep_inner = { open = " ", close = " " }
 sep_outer = { open = " ", close = " " }
+#
+# [indicator]
+# padding = { open = " ", close = " " }
+#
+[status]
+sep_left  = { open = " ", close = " " }
+sep_right = { open = " ", close = " " }
 
-[indicator]
-padding = { open = " ", close = " " }
+[git]
+unknown_sign  = " "
+modified_sign = "M"
+deleted_sign  = "D"
+clean_sign    = "C"
+modified = { fg = "yellow" }
+deleted  = { fg = "red", bold = true }
+clean = { fg = "blue" }
