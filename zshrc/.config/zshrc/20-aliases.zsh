@@ -1,5 +1,5 @@
 # Navigation aliases (ls/exa/eza)
-alias ls='eza --icons --git --git-repos --mounts --classify'
+alias ls='lsd'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ll -a'
