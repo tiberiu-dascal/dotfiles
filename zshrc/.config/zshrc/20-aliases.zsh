@@ -10,6 +10,7 @@ alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-cosmic="NVIM_APPNAME=CosmicNvim nvim"
 alias nvim-lunar="NVIM_APPNAME=LunarVim nvim"
+alias nvim-minimal="NVIM_APPNAME=minimal nvim"
 
 # Qualit Of Life Aliases
 alias aliases='alias | fzf --height 40% --layout reverse --border'
@@ -36,6 +37,7 @@ alias lg='lazygit'
 alias emacs="emacsclient -c -a 'emacs ' -nw"
 alias cat=bat
 alias k=kubectl
+alias mux=tmuxinator
 
 # youtube-dl aliases
 alias yta-aac='youtube-dl --extract-audio --audio-format aac '
@@ -53,7 +55,7 @@ alias art='php artisan'
 
 # List all nvims flavors and load the selected one
 function nvims() {
-	local vims=("default" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim" "PyNvim")
+	local vims=("default" "minimal" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim" "PyNvim")
 
 	config=$(printf "%s\n" "${vims[@]}" | fzf --prompt="Load  Config for >> " --height=20% --layout=reverse --border --exit-0)
 
