@@ -12,8 +12,8 @@ if [[ $(hostname) == "OTX-HBKT2D3" ]]; then
 
     eval "$(mise activate zsh)"
 
-    alias k='kubectl.exe'
-    alias minikube='minikube.exe'
+    # alias k='kubectl.exe'
+    # alias minikube='minikube.exe'
 
     enable_jdk17(){
         echo "Enable jdk 17 using sdkman. Please double confirm you itsma-x is in correct branch"
