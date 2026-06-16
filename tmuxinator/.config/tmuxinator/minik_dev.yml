@@ -1,0 +1,24 @@
+# /home/tdascal/.config/tmuxinator/minik_dev.yml
+
+name: 🏗️
+root: ~/REPOS/kubernetes_bootdev/
+
+on_project_stop: |
+  pkill -f "[m]inikube tunnel" || true
+  echo "Minikube tunnel stopped and clean-up completed"
+  minikube stop
+  echo "Setting k8s context back to home-cluster"
+  kubectl config use-context home-cluster
+  echo "All done"
+
+windows:
+  - editor:
+      layout: "3013,174x45,0,0[174x32,0,0,0,174x12,0,33{35x12,0,33,74,35x12,36,33,75,102x12,72,33,76}]"
+      pre-window: tmux select-layout -t #W "3013,174x45,0,0[174x32,0,0,0,174x12,0,33{35x12,0,33,74,35x12,36,33,75,102x12,72,33,76}]"
+      panes:
+        - nvim: nvim
+        - tunnel: 'until minikube status 2>/dev/null | grep -q "apiserver: Running"; do echo "Waiting for minikube before starting tunnel..."; sleep 7; done; minikube tunnel -c'
+        - proxy: 'until minikube status 2>/dev/null | grep -q "apiserver: Running"; do echo "Waiting for minikube before starting proxy..."; sleep 7; done; k proxy'
+        - minikube: minikube start
+  - k9s: 'until minikube status 2>/dev/null | grep -q "apiserver: Running"; do sleep 7; done; k9s'
+  - git: lazygit
