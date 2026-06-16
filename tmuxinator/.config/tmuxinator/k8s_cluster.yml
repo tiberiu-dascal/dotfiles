@@ -1,0 +1,21 @@
+# /home/tdascal/.config/tmuxinator/k8s_cluster.yml
+
+name: k8s_cluster
+root: ~/
+
+on_project_stop: |
+  tmux send-keys -t k8s_cluster:cluster.1 C-d
+  tmux send-keys -t k8s_cluster:cluster.2 C-d
+  tmux send-keys -t k8s_cluster:cluster.3 C-d
+  tmux send-keys -t k8s_cluster:cluster.4 C-d
+  tmux send-keys -t k8s_cluster:nfs.1 C-d
+
+windows:
+  - cluster:
+      layout: "254e,174x45,0,0[174x24,0,0,35,174x20,0,25{58x20,0,25,37,57x20,59,25,38,57x20,117,25,39}]"
+      panes:
+        - master: ssh kmaster
+        - worker1: ssh kworker1
+        - worker2: ssh kworker2
+        - worker3: ssh kworker3
+  - nfs: ssh nfs
