@@ -1,10 +1,10 @@
 # Auto-start tmux BEFORE p10k instant prompt grabs the tty.
 # (Running tmux after instant prompt causes "open terminal failed: not a terminal".)
-if [[ -o interactive && -z "$TMUX" && -t 1 && "$TERM" != screen* && "$TERM" != tmux* ]]; then
-  # No `exec`: when you detach or exit tmux, control returns to this shell
-  # (which then finishes loading below) instead of closing the terminal.
-  tmux new -A -s "🚀"
-fi
+# if [[ -o interactive && -z "$TMUX" && -t 1 && "$TERM" != screen* && "$TERM" != tmux* ]]; then
+#   # No `exec`: when you detach or exit tmux, control returns to this shell
+#   # (which then finishes loading below) instead of closing the terminal.
+#   tmux new -A -s "🚀"
+# fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
