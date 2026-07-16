@@ -13,6 +13,21 @@ alias nvim-lunar="NVIM_APPNAME=LunarVim nvim"
 alias nvim-minimal="NVIM_APPNAME=minimal nvim"
 
 # Qualit Of Life Aliases
+alias updates='~/.config/ml4w/scripts/ml4w-install-system-updates'
+alias apps='~/.config/ml4w/bin/ml4w-apps'
+alias autostart='~/.config/ml4w/scripts/ml4w-autostart'
+alias lock='hyprlock'
+alias clock='tty-clock'
+alias settings='ml4w-dotfiles-settings com.ml4w.dotfiles'
+alias quick='~/.config/ml4w/bin/ml4w-quicklinks'
+alias system='~/.config/ml4w/settings/systemmonitor'
+alias ml4w='qs ipc call welcome toggle'
+alias ml4w-settings='qs -p ~/.local/share/ml4w-dotfiles-settings/quickshell ipc call settings toggle'
+alias ml4w-calendar='qs ipc call calendar toggle'
+alias ml4w-hyprland='flatpak run com.ml4w.hyprlandsettings'
+alias ml4w-sidebar='qs ipc call sidebar toggle'
+alias shutdown='~/.config/ml4w/scripts/ml4w-power -p'
+alias arch-cleanup='~/.config/ml4w/scripts/arch/cleanup.sh'
 alias aliases='alias | fzf --height 40% --layout reverse --border'
 alias cls='clear'
 alias clera='clear'
@@ -34,7 +49,7 @@ alias rec_start='ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 
 alias repoup='find $HOME/REPOS/ -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
 alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
-alias emacs="emacsclient -c -a 'emacs ' -nw"
+alias emacs="emacsclient -c -a 'emacs '"
 alias cat=bat
 alias k=kubectl
 alias mux=tmuxinator
