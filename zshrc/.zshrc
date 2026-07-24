@@ -68,8 +68,8 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons --color=always -T -L 1 $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --icons --color=always -T -L 1 $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -A --oneline --color always --icon always --depth 1 $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'lsd -A --oneline --color always --icon always --depth 1 $realpath'
 
 bindkey -e
 

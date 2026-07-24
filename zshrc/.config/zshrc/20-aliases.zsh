@@ -11,6 +11,7 @@ alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-cosmic="NVIM_APPNAME=CosmicNvim nvim"
 alias nvim-lunar="NVIM_APPNAME=LunarVim nvim"
 alias nvim-minimal="NVIM_APPNAME=minimal nvim"
+alias nvim-go="NVIM_APPNAME=gonvim nvim"
 
 # Qualit Of Life Aliases
 alias aliases='alias | fzf --height 40% --layout reverse --border'
@@ -34,7 +35,7 @@ alias rec_start='ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 
 alias repoup='find $HOME/REPOS/ -maxdepth 1 -type d 2>/dev/null > $HOME/.tmp/gitfiles'
 alias zedit='nvim $HOME/.zshrc'
 alias lg='lazygit'
-alias emacs="emacsclient -c -a 'emacs ' -nw"
+alias emacs="emacsclient -c -a 'emacs '"
 alias cat=bat
 alias k=kubectl
 alias mux=tmuxinator
@@ -55,7 +56,7 @@ alias art='php artisan'
 
 # List all nvims flavors and load the selected one
 function nvims() {
-	local vims=("default" "minimal" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim" "PyNvim")
+	local vims=("default" "gonvim" "minimal" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim" "PyNvim")
 
 	config=$(printf "%s\n" "${vims[@]}" | fzf --prompt="Load  Config for >> " --height=20% --layout=reverse --border --exit-0)
 
