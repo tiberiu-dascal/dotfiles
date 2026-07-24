@@ -15,7 +15,8 @@ window-decoration = false
 
 # keybinds
 keybind = ctrl+\=new_split:right
-keybind = ctrl+-=new_split:down
+keybind = ctrl+/=new_split:down
+keybind = ctrl+-=decrease_font_size:1
 
 # custom-shader = shaders/bloom.glsl
 # custom-shader = shaders/bloom025.glsl
