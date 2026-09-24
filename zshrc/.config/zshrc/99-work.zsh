@@ -6,13 +6,14 @@ if [[ $(hostname) == "OTX-7Y7ZBB4" ]]; then
     M2=$M2_HOME/bin
     PATH=$M2:$PATH
     export BAT_THEME="Catppuccin-mocha"
-
+    
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
     eval "$(mise activate zsh)"
 
     # alias k='kubectl.exe'
     # alias minikube='minikube.exe'
+    alias open=wslview
 
     enable_jdk17(){
         echo "Enable jdk 17 using sdkman. Please double confirm you itsma-x is in correct branch"
