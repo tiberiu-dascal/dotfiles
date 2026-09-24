@@ -16,13 +16,13 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 windows_padding_x = 0
 
 [[plugin.prepend_fetchers]]
-id    = "git" # Remove if Yazi > v26.1.22
+id    = "git"
 url   = "*"
 run   = "git"
 group = "git"
 
 [[plugin.prepend_fetchers]]
-id    = "git" # Remove if Yazi > v26.1.22
+id    = "git"
 url   = "*/"
 run   = "git"
 group = "git" 
