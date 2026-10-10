@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash([ -f \"$PLUGIN_ROOT/package.json\" ])",
+      "Bash([ -f \"$PLUGIN_ROOT/pnpm-workspace.yaml\" ])",
+      "Bash([ -f \"$PLUGIN_ROOT/packages/core/dist/index.js\" ])",
+      "Bash(command -v pnpm)",
+      "Bash(pnpm --version)",
+      "Bash(/home/tdascal/.nvm/versions/node/v25.8.0/bin/node --version)",
+      "Bash(grep -v '^.*\\\\/knowledge-graph.json$')",
+      "Bash(awk -F/ '{print $1}')",
+      "Bash(grep -oE '\\\\.[a-zA-Z0-9]+$')",
+      "Bash(tee /tmp/kept_files.txt)",
+      "Bash(/home/tdascal/.nvm/versions/node/v25.8.0/bin/node /home/tdascal/.claude/plugins/cache/understand-anything/understand-anything/2.8.0/skills/understand/scan-project.mjs \"/home/tdascal/REPOS/dotfiles\" \"/home/tdascal/REPOS/dotfiles/.understand-anything/tmp/ua-scan-files.json\")",
+      "Bash(/home/tdascal/.nvm/versions/node/v25.8.0/bin/node -e ' *)",
+      "Bash(/home/tdascal/.nvm/versions/node/v25.8.0/bin/node *)"
+    ]
+  }
+}
